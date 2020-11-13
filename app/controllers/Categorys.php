@@ -74,6 +74,7 @@ class Categorys extends MainController
     		// check for validation errors
     		if(empty($data['category_name_err'])) {
     			// store data to db and redirect to categorys home
+                $data_to_store['user_id'] = get_sess('logged_in_user_id');
     			$stored = $this->category->add($data_to_store);
     			if($stored) {
                     // set session
