@@ -1,9 +1,8 @@
 <?php
-include_once include_path('header.php');
-include_once include_path('sidenav.php');
-include_once include_path('topnav.php');
+include_once include_path('header-admin.php');
+include_once include_path('sidenav-admin.php');
+include_once include_path('topnav-admin.php');
 ?>
-
 
 
 <main>
@@ -11,19 +10,15 @@ include_once include_path('topnav.php');
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				 <h1 class="mt-4">
+				 <h4 class="mt-1 text-center">
 				 	<?php if ($data['user']->user_active): ?>
 				 		Deactivate <?= $data['user']->user_name; ?>
 				 	<?php else: ?>
 				 		Activate <?= $data['user']->user_name; ?>
 				 	<?php endif ?>
-				 </h1>
+				 </h4>
 
-                <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item"><a href="<?php url_to('') ?>">Home</a></li>
-                    <li class="breadcrumb-item"><a href="<?php url_to('users/settings') ?>">Settings</a></li>
-                    <li class="breadcrumb-item"><a href="<?php url_to('users/activate/'.$data['user']->id) ?>">User status</a></li>
-                </ol>
+              
 			</div>
 		</div>
 		<?php include_once include_path('message.php'); ?>
@@ -64,5 +59,5 @@ include_once include_path('topnav.php');
 
 
 <?php
-	include_once include_path('footer-admin.php');
+include_once include_path('footer-admin.php');
 ?>

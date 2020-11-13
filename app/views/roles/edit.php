@@ -1,20 +1,16 @@
-<?php 
-	include_once include_path('header.php');
-	include_once include_path('topnav.php');
+<?php
+include_once include_path('header-admin.php');
+include_once include_path('sidenav-admin.php');
+include_once include_path('topnav-admin.php');
 ?>
-
 
 
 
 	<main>
             <div class="container">
-                <h1 class="mt-4">Edit <?php echo $data['role']->role_name; ?> Role</h1>
+                <h4 class="mt-4">Edit <?php echo $data['role']->role_name; ?> Role</h4>
                 
-                <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item"><a href="<?php url_to('') ?>">Home</a></li>
-                    <li class="breadcrumb-item"><a href="<?php url_to('roles') ?>">All Roles</a></li>
-                    <li class="breadcrumb-item"><a href="<?php url_to('roles/edit/'.$data['role']->id) ?>">Edit Role</a></li>
-                </ol>
+              
 
                 <?php include_once include_path('message.php'); ?>
 
@@ -54,7 +50,6 @@
 
 
 
-
-<?php 
-	include_once include_path('footer.php');
+<?php
+include_once include_path('footer-admin.php');
 ?>

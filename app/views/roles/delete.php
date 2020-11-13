@@ -1,6 +1,7 @@
-<?php 
-	include_once include_path('header.php');
-	include_once include_path('topnav.php');
+<?php
+include_once include_path('header-admin.php');
+include_once include_path('sidenav-admin.php');
+include_once include_path('topnav-admin.php');
 ?>
 
 
@@ -11,19 +12,15 @@
 
 		<div class="row">
 			<div class="col-sm-12">
-				 <h1 class="mt-4">
+				 <h4 class="mt-2">
 				 	<?php if (!$data['users']['count']): ?>
 				 		Delete <?= $data['role']->role_name ?>
 				 	<?php else: ?>
 				 		<?= $data['role']->role_name ?> Cannot be deleted.
 				 	<?php endif ?>
-				 </h1>
+				 </h4>
                 
-                <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item"><a href="<?php url_to('') ?>">Home</a></li>
-                    <li class="breadcrumb-item"><a href="<?php url_to('roles') ?>">All Menu Categories</a></li>
-                    <li class="breadcrumb-item"><a href="<?php url_to('roles/delete/'.$data['role']->id) ?>">Delete <?= $data['role']->role_name ?> role </a></li>
-                </ol>
+               
 			</div>
 		</div>
 
@@ -76,6 +73,6 @@
 
 
 
-<?php 
-	include_once include_path('footer.php');
+<?php
+include_once include_path('footer-admin.php');
 ?>

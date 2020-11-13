@@ -6,7 +6,7 @@
       <div class="intro">The Accountant Who Codes. <br>
       </div>
        <div class="mt-1">
-      <a class="btn btn-primary mt-1 text-white">New Blog</a>
+      <a href="<?php url_to('posts/create') ?>" class="btn btn-primary mt-1 text-white">New Blog</a>
       <?php if (get_sess('logged_in_user_id') == 1): ?>
         <a href="<?php url_to('users/create') ?>"  class="btn btn-primary mt-1 text-white">New User</a> 
       <?php endif ?>

@@ -18,19 +18,32 @@
 
 
                 <ul class="navbar-nav flex-column text-left">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="<?php url_to('users') ?>"><i class="fa fa-users fa-fw mr-2"></i>Users
-                            <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="<?php url_to('blogs') ?>"><i class="fas fa-blog fa-fw mr-2"></i>Blogs
-                            <span class="sr-only">(current)</span></a>
-                    </li>
-
                     <?php if (get_sess('logged_in')): ?>
                         <li class="nav-item active">
-                            <a class="nav-link" href="<?php url_to('users/logout') ?>"><i class="fas fa-blog fa-fw mr-2"></i>Logout
+                            <a class="nav-link" href="<?php url_to('users') ?>"><i class="fa fa-users fa-fw mr-2"></i>Users
                                 <span class="sr-only">(current)</span></a>
+                        </li>
+                        <?php if (get_sess('logged_in_user_id') == 1): ?>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="<?php url_to('roles') ?>"><i class="fa fa-users fa-fw mr-2"></i>Users Roles
+                                    </a>
+                            </li>
+                        <?php endif ?>
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="<?php url_to('categorys') ?>"><i class="fas fa-blog fa-fw mr-2"></i>Blogs Categorys
+                                </a>
+                        </li>
+                        
+                        <li class="nav-item active">
+                            <a class="nav-link" href="<?php url_to('posts') ?>"><i class="fas fa-blog fa-fw mr-2"></i>Blogs
+                                </a>
+                        </li>
+
+                    
+                        <li class="nav-item active">
+                            <a class="nav-link" href="<?php url_to('users/logout') ?>"><i class="fas fa-blog fa-fw mr-2"></i>Logout
+                                </a>
                         </li>
                     <?php endif ?>
 

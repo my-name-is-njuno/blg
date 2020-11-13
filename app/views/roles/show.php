@@ -1,6 +1,7 @@
-<?php 
-	include_once include_path('header.php');
-	include_once include_path('topnav.php');
+<?php
+include_once include_path('header-admin.php');
+include_once include_path('sidenav-admin.php');
+include_once include_path('topnav-admin.php');
 ?>
 
 	
@@ -13,29 +14,28 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-					<h1>
-						<?= $data['role']->role_name ?> Employee(s) (<?= $data['users']['count'] ?>)
-					</h1>
+					<h4>
+						<?= $data['role']->role_name ?> User(s) (<?= $data['users']['count'] ?>)
+					</h4>
 				</div>
 			</div>
 			<?php include_once include_path('message.php'); ?>
 			<div class="row">
 				<div class="col-sm-12">
-					<ol class="breadcrumb mb-4">
-	                    <li class="breadcrumb-item"><a href="<?php url_to('') ?>">Home</a></li>
-	                    <li class="breadcrumb-item"><a href="<?php url_to('roles') ?>">Employees Roles</a></li>
-	                    <li class="breadcrumb-item"><a href="<?php url_to('roles/show/'.$data['role']->id) ?>">All <?= $data['role']->role_name ?> Employees</a></li>
-	                </ol>
+					
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-sm-12">
 					
-					<table class="table table-sm table-bordered">
+					<table class="table table-sm table-bordered dt">
                       <thead>
                         <tr>
-                          <th width="30%">
+                          <th width="25%">
                             Name
+                          </th>
+                          <th>
+                            Blogs
                           </th>
                           <th width="7%">
                             Status
@@ -43,12 +43,10 @@
                           <th width="7%">
                             Role 
                           </th>
-                          <th width="15%">
+                          <th width="20%">
                             Joined On
                           </th>
-                          <th>
-                            Activities
-                          </th>
+                          
                           <th>
                             Deactivate
                           </th>
@@ -61,10 +59,13 @@
                               <td>
                                 <?= $user->user_name ?>
                               </td>
-                              <td>
+                              <td class="text-center">
+                                <a href="<?php url_to('users/show/'.$user->id) ?>" class=""><?= $user->cnt ?></a>
+                              </td>
+                              <td class="text-center">
                                 <?php if ($user->user_active): ?>
-                                  <span class="btn btn-primary btn-sm"><i class="fa fa-check"></i></span><?php else: ?>
-                                  <span class="btn btn-red btn-sm"><i class="fa fa-times"></i></span>
+                                  <span class="text-success"><i class="fa fa-check"></i></span><?php else: ?>
+                                  <span class="text-danger"><i class="fa fa-times"></i></span>
                                 <?php endif ?>
                               </td>
                               <td>
@@ -73,14 +74,12 @@
                               <td>
                                 <?= formatedDateshow($user->user_at) ?>
                               </td>
-                              <td>
-                                <a href="<?php url_to('users/activitys/'.$user->id) ?>" class="btn btn-success btn-sm"><?= $user->cnt ?> Activities</a>
-                              </td>
+                              
                               <td>
                                 <?php if ($user->user_active): ?>
-                                  <a href="<?php url_to('users/deactivate/'.$user->id) ?>" class="btn btn-sm btn-danger">Deactivate User</a>
+                                  <a href="<?php url_to('users/deactivate/'.$user->id) ?>" class="">Deactivate User</a>
                                 <?php else: ?>
-                                  <a href="<?php url_to('users/deactivate/'.$user->id) ?>" class="btn btn-sm btn-info">Activate User</a>
+                                  <a href="<?php url_to('users/deactivate/'.$user->id) ?>" class="">Activate User</a>
                                 <?php endif ?>
                                 
                               </td>
@@ -98,8 +97,6 @@
 
 
 
-
-
-<?php 
-	include_once include_path('footer.php');
+<?php
+include_once include_path('footer-admin.php');
 ?>

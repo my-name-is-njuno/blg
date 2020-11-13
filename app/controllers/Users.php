@@ -36,7 +36,7 @@ class Users extends MainController
         $data = [];
         if(get_sess('logged_in_user_id') == 1) {
             $data['user'] = $this->user->find(get_sess('logged_in_user_id'))['data'];
-            $data['users'] = $this->user->all_for_show()['data'];
+            $data['users'] = $this->user->getAll();
             $this->view('users/index', $data);
         } else {
             set_sess('message_error', 'You have to be admin to access that page');
@@ -531,6 +531,38 @@ class Users extends MainController
 
 
 
+    public function deactivate($id)
+        {
+            $data = [];
+
+            $user = $this->user->find($id)['data'];
+            $data['user'] = $user;
+
+            if($_SERVER['REQUEST_METHOD'] == "POST") {
+                if($user->user_active) {
+                    $message = "User deactivated successfully";
+                    $data_to_update = ['user_active' => 0];
+                } else {
+                    $message = "User activated successfully";
+                    $data_to_update = ['user_active' => 1];
+                }
+
+                $this->user->update($id, $data_to_update);
+                set_sess('message_success', $message);
+                redirect_to('users/deactivate/'.$id);
+            } else {
+                $this->view('users/activate', $data);
+            }
+        }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -602,6 +634,32 @@ class Users extends MainController
                 $this->view('users/edit_user_roles', $data);
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
 

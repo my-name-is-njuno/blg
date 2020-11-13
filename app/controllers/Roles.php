@@ -22,6 +22,10 @@ class Roles extends MainController
             set_sess("message_error", "You have to be logged in to access this functionality");
             redirect_to("users/login");            
         }
+        if (get_sess('logged_in_user_id') != 1) {
+            set_sess("message_error", "You have to be super admin for that");
+            redirect_to("users/show/".get_sess('logged_in_user_id')); 
+        }
         // load models 
         $this->role = $this->model('Role');
         $this->user = $this->model('User');

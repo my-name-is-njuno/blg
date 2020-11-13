@@ -1,6 +1,7 @@
-<?php 
-	include_once include_path('header.php');
-	include_once include_path('topnav.php');
+<?php
+include_once include_path('header-admin.php');
+include_once include_path('sidenav-admin.php');
+include_once include_path('topnav-admin.php');
 ?>
 
 
@@ -8,13 +9,9 @@
 
 	<main>
             <div class="container">
-                <h1 class="mt-4">Add New Menu Category</h1>
+                <h4 class="mt-1">Add New Post Category</h4>
                 
-                <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item"><a href="<?php url_to('') ?>">Home</a></li>
-                    <li class="breadcrumb-item"><a href="<?php url_to('categorys') ?>">All Menu categorys</a></li>
-                    <li class="breadcrumb-item"><a href="<?php url_to('categorys/create') ?>">New Menu Category</a></li>
-                </ol>
+         
 
                 <?php include_once include_path('message.php'); ?>
 
@@ -32,7 +29,7 @@
 								<span class="form-text text-danger"><?php echo $data['category_name_err'] ?></span>
 							</div>
 
-							<button type="submit" class="btn btn-primary btn-lg">Add New Menu category</button>
+							<button type="submit" class="btn btn-primary btn-lg">Add New Post category</button>
 
                       </form>
 	              </div>
@@ -57,6 +54,6 @@
 
 
 
-<?php 
-	include_once include_path('footer.php');
+<?php
+include_once include_path('footer-admin.php');
 ?>

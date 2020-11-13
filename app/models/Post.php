@@ -48,9 +48,9 @@ class Post
         return $this->db->get($this->table, $id);
     }
 
-    public function checkIfItemExist($name)
+    public function checkIfTitleExist($name)
     {
-        $exists = $this->db->getOne($this->table, 'post_item', $name);
+        $exists = $this->db->getOne($this->table, 'post_title', $name);
         if($exists['count'] > 0) {
             return true;
         } else {
@@ -58,9 +58,9 @@ class Post
         }
     }
 
-    public function checkIfItemExistEdit($id, $post_name)
+    public function checkIfTitleExistEdit($id, $post_name)
     {
-        $sql = "SELECT * FROM $this->table WHERE id != :id AND post_item = :post_item";
+        $sql = "SELECT * FROM $this->table WHERE id != :id AND post_title = :post_item";
         $this->db->query($sql);
         $this->db->bind(':id', $id);
         $this->db->bind(':post_item', $post_name);
@@ -114,10 +114,13 @@ class Post
     public function getAll()
     {
         $sql = "SELECT $this->table.* ,
-                categorys.category_name
+                categorys.category_name,
+                users.user_name, users.id as uid
                 FROM $this->table
                 INNER JOIN categorys
-                ON $this->table.post_category_id = categorys.id";
+                ON $this->table.post_category_id = categorys.id
+                INNER JOIN users 
+                ON users.id = $this->table.post_user_id";
         return $this->db->getManySql($sql);
     }
 

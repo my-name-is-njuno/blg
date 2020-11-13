@@ -107,8 +107,13 @@ class Categorys extends MainController
 
     	// fetch category with id
     	$category = $this->category->find($id);
+
     	// check if null is returned
     	if($category['count']>0) {
+            // get categorys posts
+            $posts = $this->category->get_posts_for($id);
+            $data['category'] = $category['data'];
+            $data['posts'] = $posts;
     		$this->view('categorys/show', $data);
     	} else {
     		// load 404 with error

@@ -228,9 +228,9 @@ class User
 
     public function getAll()
     {
-        $sql = "SELECT $this->table.*, roles.role_name, roles.id as rid, Count(activitys.id) as cnt
+        $sql = "SELECT $this->table.*, roles.role_name, roles.id as rid, Count(posts.id) as cnt
                 FROM $this->table
-                LEFT JOIN activitys ON $this->table.id=activitys.activity_user_id
+                LEFT JOIN posts ON $this->table.id=posts.post_user_id
                 INNER JOIN roles ON users.user_role_id = roles.id
                 GROUP BY $this->table.id ORDER BY cnt DESC";
         return $this->db->getManySql($sql);
@@ -243,9 +243,9 @@ class User
 
     public function user_whose_role_is($id)
     {
-        $sql = "SELECT $this->table.*, roles.role_name, roles.id as rid, Count(activitys.id) as cnt
+        $sql = "SELECT $this->table.*, roles.role_name, roles.id as rid, Count(posts.id) as cnt
                 FROM $this->table
-                LEFT JOIN activitys ON $this->table.id=activitys.activity_user_id
+                LEFT JOIN posts ON $this->table.id=posts.post_user_id
                 INNER JOIN roles ON users.user_role_id = roles.id
                 WHERE user_role_id = '$id'
                 GROUP BY $this->table.id ORDER BY cnt DESC";

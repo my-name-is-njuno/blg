@@ -78,11 +78,23 @@ class Category
 
     public function getAll()
     {
-        $sql = "SELECT $this->table.*, Count(menus.id) as cnt
-                FROM $this->table LEFT JOIN menus ON 
-                $this->table.id=menus.menu_category_id 
+        $sql = "SELECT $this->table.*, Count(posts.id) as cnt
+                FROM $this->table LEFT JOIN posts ON 
+                $this->table.id=posts.post_category_id 
                 GROUP BY $this->table.id ORDER BY cnt DESC";
 
+        return $this->db->getManySql($sql);
+    }
+
+
+
+
+
+
+
+    public function get_posts_for($id)
+    {
+        $sql = "SELECT * FROM posts WHERE post_category_id = '$id'";
         return $this->db->getManySql($sql);
     }
 }

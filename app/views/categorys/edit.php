@@ -1,6 +1,7 @@
-<?php 
-	include_once include_path('header.php');
-	include_once include_path('topnav.php');
+<?php
+include_once include_path('header-admin.php');
+include_once include_path('sidenav-admin.php');
+include_once include_path('topnav-admin.php');
 ?>
 
 
@@ -9,12 +10,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<h1>
+				<h4>
 					Edit <?php echo $data['category']->category_name ?>
-				</h1>				<ol class="breadcrumb mb-4">
-	                <li class="breadcrumb-item"><a href="<?php url_to('') ?>">Home</a></li>
-	                <li class="breadcrumb-item"><a href="<?php url_to('menus') ?>">Our Menu</a></li>
-	            </ol>
+				</h4>				
 			</div>
 		</div>
 
@@ -45,6 +43,6 @@
 
 
 
-<?php 
-	include_once include_path('footer.php');
+<?php
+include_once include_path('footer-admin.php');
 ?>
