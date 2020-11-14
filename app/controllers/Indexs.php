@@ -23,30 +23,30 @@ class Indexs extends MainController
         // first time, create admin user
         $user = $this->user->getAll();
         if($user['count'] == 0) {
-            $data_to_store_user = [
-                // 'id' => 1,
-                'user_name' => "Petero",
-                'user_email' => "pmnjuno@gmail.com",
-                'user_password' => password_hash('password', PASSWORD_DEFAULT),
-                'user_role_id' => 1
-            ];
+            // $data_to_store_user = [
+            //     // 'id' => 1,
+            //     'user_name' => "Petero",
+            //     'user_email' => "pmnjuno@gmail.com",
+            //     'user_password' => password_hash('password', PASSWORD_DEFAULT),
+            //     'user_role_id' => 1
+            // ];
 
-            $this->user->add($data_to_store_user);
+            // $this->user->add($data_to_store_user);
         }
         // create admin role
         $roles = $this->role->getAll();
         if($roles['count'] == 0) {
-            $data_to_store_admin = [
-                'role_name' => "Admin",
-                'role_by' => 1
-            ];
-            $this->role->add($data_to_store_admin);
+            // $data_to_store_admin = [
+            //     'role_name' => "Admin",
+            //     'role_by' => 1
+            // ];
+            // $this->role->add($data_to_store_admin);
 
-            $data_to_store_cashier = [
-                'role_name' => "Writer",
-                'role_by' => 1
-            ];
-            $this->role->add($data_to_store_cashier);
+            // $data_to_store_cashier = [
+            //     'role_name' => "Writer",
+            //     'role_by' => 1
+            // ];
+            // $this->role->add($data_to_store_cashier);
 
         }
 
