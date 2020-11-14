@@ -48,6 +48,25 @@ class Post
         return $this->db->get($this->table, $id);
     }
 
+
+
+    public function get_post_for_show($slug)
+    {
+        $sql = "SELECT $this->table.* ,
+                categorys.category_name,
+                users.user_name, users.id as uid 
+                FROM $this->table
+                INNER JOIN categorys
+                ON $this->table.post_category_id = categorys.id
+                INNER JOIN users
+                ON $this->table.post_user_id = users.id
+                WHERE $this->table.post_slug = '$slug'";
+        return $this->db->getOneSql($sql);
+    }
+
+
+
+
     public function checkIfTitleExist($name)
     {
         $exists = $this->db->getOne($this->table, 'post_title', $name);
@@ -84,7 +103,8 @@ class Post
                 categorys.category_name
                 FROM $this->table
                 INNER JOIN categorys
-                ON $this->table.post_category_id = categorys.id";
+                ON $this->table.post_category_id = categorys.id
+                ORDER BY id DESC";
 
         $data = $this->db->select_with_paginantion($sql, $items, $page);
 

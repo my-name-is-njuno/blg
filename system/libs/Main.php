@@ -21,6 +21,12 @@ class Main
           include_once 'app/controllers/Indexs.php';
     			$home = new Indexs();
     			$home->about();
+            }
+        else if($ctrl == 'Show') {
+            include_once 'app/controllers/Indexs.php';
+            $blog_id = $url[1];
+            $home = new Indexs();
+            $home->show($blog_id);
         } else {
           if (file_exists('app/controllers/'.$ctrl.'.php')) {
     				include_once 'app/controllers/'.$ctrl.'.php';

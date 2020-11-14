@@ -31,8 +31,9 @@
    </ul>
 
    <div class="my-2 my-md-3">
-       <a class="btn btn-primary">Get in Touch</a>
+       <span data-toggle="modal" data-target="#my-modal-contact" class="btn btn-primary">Get in Touch</span>
    </div>
  </div>
 </nav>
 </header>
+ 

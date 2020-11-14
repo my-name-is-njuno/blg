@@ -16,6 +16,7 @@
 
            <!-- Theme CSS -->
            <link id="theme-style" rel="stylesheet" href="app/tools/assets/css/theme-1.css">
+           <link id="theme-style" rel="stylesheet" href="app/tools/assets/css/custom.css">
 
        </head>
 

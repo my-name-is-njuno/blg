@@ -101,6 +101,8 @@ class Posts extends MainController
             'post_category_id_err' => '',
             'post_content' => '',
             'post_content_err' => '',
+            'post_keywords' => '',
+            'post_keywords_err' => '',
             'post_description' => '',
             'post_description_err' => '',
             'post_read_mins' => '',
@@ -154,8 +156,8 @@ class Posts extends MainController
                   $new_name = strtolower(slugify($title)).time();
                   $handle->file_new_name_body   = $new_name ;
                   $handle->image_resize         = true;
-                  $handle->image_x              = 400;
-                  $handle->image_y              = 300;
+                  $handle->image_x              = 1200;
+                  $handle->image_y              = 600;
                   $handle->process(get_img_path().'post/');
                   if ($handle->processed) {
                     $data_to_store['post_image'] = $new_name  . ".".$handle->file_dst_name_ext;
@@ -177,6 +179,16 @@ class Posts extends MainController
                 $data_to_store['post_category_id'] = proper_case($category_id);
             } else {
                 $data['post_category_id_err'] = "category of the post is required";
+                $error = true;
+            }
+
+
+            $keywords = post_data('post_keywords');
+            if(!empty($keywords)) {
+                $data['post_keywords'] = $keywords;
+                $data_to_store['post_keywords'] = proper_case($keywords);
+            } else {
+                $data['post_keywords_err'] = "Keywords of the post are required";
                 $error = true;
             }
 
@@ -288,6 +300,8 @@ class Posts extends MainController
             'post_read_mins_err' => '',
             'post_user_id' => '',
             'post_user_id_err' => '',
+            'post_keywords' => '',
+            'post_keywords_err' => '',
         ];
 
 
@@ -348,8 +362,8 @@ class Posts extends MainController
                   $new_name = strtolower(slugify($title)).time();
                   $handle->file_new_name_body   = $new_name ;
                   $handle->image_resize         = true;
-                  $handle->image_x              = 400;
-                  $handle->image_y              = 300;
+                  $handle->image_x              = 1200;
+                  $handle->image_y              = 600;
                   $handle->process(get_img_path().'post/');
                   if ($handle->processed) {
                     $data_to_update['post_image'] = $new_name  . ".".$handle->file_dst_name_ext;
@@ -358,10 +372,7 @@ class Posts extends MainController
                     $data['post_image_err'] = $handle->error;
                     $error = true;
                   }
-            } else {
-                $data['post_image_err'] = "Post for the image is required";
-                $error = true;
-            }
+            } 
 
 
             $category_id = post_data('post_category_id');
@@ -374,12 +385,22 @@ class Posts extends MainController
             }
 
 
-            $content = post_data('post_content');
+            $content = $_POST['post_content'];
             if(!empty($content)) {
                 $data['post_content'] = $content;
                 $data_to_update['post_content'] = proper_case($content);
             } else {
                 $data['post_content_err'] = "content of the post is required";
+                $error = true;
+            }
+
+
+            $keywords = $_POST['post_keywords'];
+            if(!empty($keywords)) {
+                $data['post_keywords'] = $keywords;
+                $data_to_update['post_keywords'] = proper_case($keywords);
+            } else {
+                $data['post_keywords_err'] = "keywords of the post is required";
                 $error = true;
             }
 
@@ -402,7 +423,6 @@ class Posts extends MainController
                 $data['post_read_mins_err'] = "read_mins of the post is required";
                 $error = true;
             }
-
 
 
 

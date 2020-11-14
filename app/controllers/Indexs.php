@@ -50,18 +50,32 @@ class Indexs extends MainController
 
         }
 
-
-
     }
 
 
 
 
-    public function home()
+    public function home($page=1)
     {
         $data = [];
-        // $data['posts'] = $this->post->getAll();
-    	  $this->view('home', $data);
+        if(!$page) {$page = 1;}
+        $dt = $this->post->getAllPaginated(10, $page);
+        if($dt) {
+            $total_pages = $dt[0];
+            $posts_data = $dt[1];
+            $total_results = $dt[2];
+        } else {
+            $total_pages = 0;
+            $posts_data = [];
+            $total_results = 0;
+        }
+
+        // get all posts
+        $data['posts'] = $posts_data;
+        $data['total_results'] = $total_results;
+        $data['total_pages'] = $total_pages;
+
+    	$this->view('home', $data);
     }
 
 
@@ -73,7 +87,7 @@ class Indexs extends MainController
     public function about()
     {
         $data = [];
-    	  $this->view('about', $data);
+    	$this->view('about', $data);
     }
 
 
@@ -85,18 +99,24 @@ class Indexs extends MainController
 
 
 
-    public function admin()
+    public function show($slug)
     {
-        if(!get_sess('logged_in')) {
-            redirect_to("users/login");
-        }
         $data = [];
-
-        $data['posts'] = $this->post->getAll();
-        $data['categorys'] = $this->category->getAll();
-
-    	$this->view('home', $data);
+        $blog = $this->post->get_post_for_show($slug);
+        if($blog['count']) {
+            $data['blog'] = $blog['data'];
+            $this->view('show', $data);
+        } else {
+            $data['error'] = "Post queried for does not exist";
+            $this->view('errors/404', $data);
+            return;
+        }
     }
+
+
+
+
+
 
 
 

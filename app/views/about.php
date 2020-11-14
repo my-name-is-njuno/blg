@@ -42,5 +42,8 @@
 
 
 <?php
-	include_once include_path('footer.php');
+include_once include_path('modal-contact.php');
+include_once include_path('modal-website.php');
+include_once include_path('modal-desktop-app.php');
+include_once include_path('footer.php');
 ?>

@@ -36,6 +36,14 @@ include_once include_path('topnav-admin.php');
 
 
 							<div class="form-group">
+								<label for="my-input">Post Keywords (Separate keywords with comma)</label>
+								<input type="text" name="post_keywords" class="form-control form-control-lg" value="<?php echo $data['post_keywords']; ?>" required>
+								<span class="form-text text-danger"><?php echo $data['post_keywords_err'] ?></span>
+							</div>
+
+
+
+							<div class="form-group">
 								<label for="my-input">Post Content</label>
 								<textarea type="text" name="post_content" class="form-control form-control-lg sm" required><?php echo $data['post_content']; ?></textarea>
 								<span class="form-text text-danger"><?php echo $data['post_content_err'] ?></span>
