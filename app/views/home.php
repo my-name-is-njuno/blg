@@ -57,11 +57,12 @@
 		<nav class="blog-nav nav nav-justified my-5">
 				<?php if ($page > 1): ?>
 					<?php $pg = $page - 1; ?>
-					<a class="nav-link-prev nav-item nav-link d-none rounded-left" href="<?php url_to('posts/home/'.$pg); ?>">Previous</a>
+
+					<a class="nav-link-prev nav-item nav-link rounded-left" href="<?php url_to('indexs/home/'.$pg); ?>"></i>Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
 				<?php endif ?>
 				<?php if ($page < $total_pages): ?>
 					<?php $pgg = $page +1;  ?>
-					<a class="nav-link-next nav-item nav-link rounded" href="<?php url_to('posts/home/'.$pgg) ?>">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+					<a class="nav-link-next nav-item nav-link rounded" href="<?php url_to('indexs/home/'.$pgg) ?>">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
 				<?php endif ?>
 		</nav>
 	

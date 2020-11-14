@@ -22,7 +22,7 @@ class Indexs extends MainController
 
         // first time, create admin user
         $user = $this->user->getAll();
-        if($user['count'] == 0) {
+        if($user['count'] < 1) {
             // $data_to_store_user = [
             //     // 'id' => 1,
             //     'user_name' => "Petero",
@@ -35,7 +35,7 @@ class Indexs extends MainController
         }
         // create admin role
         $roles = $this->role->getAll();
-        if($roles['count'] == 0) {
+        if($roles['count'] < 1) {
             // $data_to_store_admin = [
             //     'role_name' => "Admin",
             //     'role_by' => 1

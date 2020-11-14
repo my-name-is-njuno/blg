@@ -76,6 +76,7 @@ class Emails extends MainController
         $Body .= "\n";
         $Body .= "Email: ";
         $Body .= $email;
+        $Body .= "\n\n";
         $Body .= "Contact Number: ";
         $Body .= $number;
         $Body .= "\n";
