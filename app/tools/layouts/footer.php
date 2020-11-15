@@ -4,13 +4,13 @@
 </footer>
 </div>
 <!-- Javascript -->
-<script src="app/tools/assets/plugins/jquery-3.3.1.min.js"></script>
-<script src="app/tools/assets/plugins/popper.min.js"></script>
-<script src="app/tools/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="app/tools/assets/js/validator.js"></script>
-<script src="app/tools/assets/js/website-contact-form.js"></script>
-<script src="app/tools/assets/js/soft-contact-form.js"></script>
-<script src="app/tools/assets/js/contact-form.js"></script>
+<script src="<?php url_to('app/tools/assets/plugins/jquery-3.3.1.min.js') ?>"></script>
+<script src="<?php url_to('app/tools/assets/plugins/popper.min.js') ?>"></script>
+<script src="<?php url_to('app/tools/assets/plugins/bootstrap/js/bootstrap.min.js') ?>"></script>
+<script src="<?php url_to('app/tools/assets/js/validator.js') ?>"></script>
+<script src="<?php url_to('app/tools/assets/js/website-contact-form.js') ?>"></script>
+<script src="<?php url_to('app/tools/assets/js/soft-contact-form.js') ?>"></script>
+<script src="<?php url_to('app/tools/assets/js/contact-form.js') ?>"></script>
 
 </body>
 </html>

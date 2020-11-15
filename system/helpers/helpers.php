@@ -79,14 +79,14 @@ function include_path($path)
 
 
 function get_img($path) {
-    return "app/tools/assets/images/" . $path;
+    return URL_ROOT ."app/tools/assets/images/" . $path;
 }
 
 
 
 
 function get_img_path() {
-    return "app/tools/assets/images/";
+    return  URL_ROOT . "app/tools/assets/images/";
 }
 
 

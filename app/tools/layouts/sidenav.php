@@ -10,7 +10,7 @@
  <div id="navigation" class="collapse navbar-collapse flex-column" >
    <div class="profile-section pt-3 pt-lg-0">
      <a href="<?php url_to('') ?>">
-       <img class="profile-image mb-3 rounded-circle mx-auto" src="app/tools/assets/images/profile.png" alt="image" >
+       <img class="profile-image mb-3 rounded-circle mx-auto" src="<?php echo get_img('profile.png') ?>"  alt="image" >
      </a>
 
      <div class="bio mb-3">Hi and welcome to my website. Am an accomplished software developer with 5 years of experience in desktop and web applications development. <br> <br> <a href="<?php url_to('about') ?>">Read More About Me Here</a> </a></div><!--//bio-->
