@@ -328,6 +328,7 @@ class Posts extends MainController
         $data['post_content'] = $post['data']->post_content;
         $data['post_description'] = $post['data']->post_description;
         $data['post_category_id'] = $post['data']->post_category_id;
+        $data['post_keywords'] = $post['data']->post_keywords;
 
 
         // check if post method

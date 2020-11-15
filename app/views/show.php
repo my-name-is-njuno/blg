@@ -1,5 +1,29 @@
+<!DOCTYPE html>
+       <html lang="en">
+       <head>
+           <title>JN Media - <?= $data['blog']->post_title ?> </title>
+
+           <!-- Meta -->
+           <meta charset="utf-8">
+           <meta http-equiv="X-UA-Compatible" content="IE=edge">
+           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+           <meta name="description" content="<?= $data['blog']->post_description ?>">
+           <meta name="keywords" content="<?= $data['blog']->post_keywords ?>">
+           <meta name="author" content="Petero Njuno">
+           <link rel="shortcut icon" href="<?php url_to('app/tools/assets/images/favicon/android-icon-72x72.png') ?>">
+
+           <!-- FontAwesome JS-->
+           <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+
+           <!-- Theme CSS -->
+           <link id="theme-style" rel="stylesheet" href="<?php url_to('app/tools/assets/css/theme-1.css') ?>">
+           <link id="theme-style" rel="stylesheet" href="<?php url_to('app/tools/assets/css/custom.css') ?>">
+
+       </head>
+
+       <body>
 <?php
-	include_once include_path('header.php');
+	
 	include_once include_path('sidenav.php');
 	include_once include_path('topnav.php');
 ?>
@@ -28,13 +52,14 @@
 			    </div>
 				    
 			    <nav class="blog-nav nav nav-justified my-5">
-				  <a class="nav-link-prev nav-item nav-link rounded-left" href="index.html">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
-				  <a class="nav-link-next nav-item nav-link rounded-right" href="blog-list.html">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+				  <a class="nav-link-prev nav-item nav-link rounded-left" href="index.html">Go Back Home <i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+				  
 				</nav>
 				
 				
 				
 		    </div><!--//container-->
+		    
 	    </article>
 
 

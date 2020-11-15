@@ -65,6 +65,23 @@ class Post
     }
 
 
+    public function getSimiliar($category)
+    {
+        $sql = "SELECT $this->table.* ,
+                categorys.category_name,
+                users.user_name, users.id as uid 
+                FROM $this->table
+                INNER JOIN categorys
+                ON $this->table.post_category_id = categorys.id
+                INNER JOIN users
+                ON $this->table.post_user_id = users.id
+                WHERE $this->table.post_category_id = '$category'
+                LIMIT 4";
+        return $this->db->getManySql($sql);
+    }
+
+
+
 
 
     public function checkIfTitleExist($name)

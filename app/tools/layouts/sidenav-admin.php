@@ -11,8 +11,7 @@
         <div id="navigation" class="collapse navbar-collapse flex-column">
             <div class="profile-section pt-3 pt-lg-0">
                 <a href="<?php url_to('') ?>">
-                    <img class="profile-image mb-3 rounded-circle mx-auto" src="app/tools/assets/images/profile.png"
-                        alt="image">
+                    <img class="profile-image mb-3 rounded-circle mx-auto" src="<?php echo get_img('profile.png') ?>"  alt="image" >
                 </a>
 
 

@@ -104,7 +104,9 @@ class Indexs extends MainController
         $data = [];
         $blog = $this->post->get_post_for_show($slug);
         if($blog['count']) {
+            $similar_post = $this->post->getSimiliar($blog['data']->post_category_id);
             $data['blog'] = $blog['data'];
+            $data['similiar_blogs'] = $similar_post['data'];
             $this->view('show', $data);
         } else {
             $data['error'] = "Post queried for does not exist";
