@@ -12,7 +12,7 @@ define('DB_NAME', 'blog');
 // URL ROOT
 // define("URL_ROOT", "http://localhost/websites/meme/php/");
 // define("URL_ROOT", "index.php?url=");
-define("URL_ROOT", '/');
+define("URL_ROOT", 'http://thejnmedia.com/');
 
 
 // SITE NAME
