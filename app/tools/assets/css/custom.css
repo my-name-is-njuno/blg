@@ -56,3 +56,37 @@ select.form-control:not([size]):not([multiple]) {
 .help-block ul li {
     color: red;
 }
+
+
+
+
+
+
+
+
+
+
+
+.flex {
+    display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.regions .flex {
+    flex-wrap: wrap;
+}
+.regions .card {
+    text-align: center;
+    margin: 18px 10px 40px;
+    padding: 5px;
+    transition: transform 0.2s ease-in;
+}
+.regions.card h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.regions .card:hover {
+    transform: translateY(-15px);
+}
