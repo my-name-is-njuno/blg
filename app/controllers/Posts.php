@@ -226,7 +226,7 @@ class Posts extends MainController
 
 
     		// check for validation errors
-    		if(!$error) {
+    		if(!$errors) {
     			// store data to db and redirect to posts home
                 $data_to_store['post_user_id'] = get_sess('logged_in_user_id');
     			$stored = $this->post->add($data_to_store);

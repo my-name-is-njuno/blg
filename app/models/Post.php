@@ -152,10 +152,13 @@ class Post
     {
         $sql = "SELECT $this->table.* ,
                 categorys.category_name,
-                users.user_name, users.id as uid
+                users.user_name, users.id as uid,
+                count(views.id) as views_count
                 FROM $this->table
                 INNER JOIN categorys
                 ON $this->table.post_category_id = categorys.id
+                INNER JOIN views
+                ON $this->table.id = views.view_post_id
                 INNER JOIN users 
                 ON users.id = $this->table.post_user_id";
         return $this->db->getManySql($sql);

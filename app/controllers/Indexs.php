@@ -10,6 +10,7 @@ class Indexs extends MainController
 
     private $user;
     private $role;
+    private $view;
     private $post;
     private $category;
 
@@ -17,6 +18,7 @@ class Indexs extends MainController
     {
         $this->user =$this->model('User');
         $this->role =$this->model('Role');
+        $this->view =$this->model('View');
         $this->category =$this->model('Category');
         $this->post =$this->model('Post');
 
@@ -104,9 +106,15 @@ class Indexs extends MainController
         $data = [];
         $blog = $this->post->get_post_for_show($slug);
         if($blog['count']) {
-            $similar_post = $this->post->getSimiliar($blog['data']->post_category_id);
+            
             $data['blog'] = $blog['data'];
-            $data['similiar_blogs'] = $similar_post['data'];
+            $view_data = getLocationInfoByIp();
+            $data_to_store = ['view_post_id' => $blog['data']->id, 'view_ip' => 'User IP Address - '.$view_data['ip'], 'view_country' => $view_data['country'], 'view_city' => $view_data['city'] ];
+            $this->view->add($data_to_store);
+
+            // $similar_post = $this->post->getSimiliar($blog['data']->post_category_id);
+            // $data['similiar_blogs'] = $similar_post['data'];
+
             $this->view('show', $data);
         } else {
             $data['error'] = "Post queried for does not exist";
@@ -114,8 +122,6 @@ class Indexs extends MainController
             return;
         }
     }
-
-
 
 
 

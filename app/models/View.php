@@ -2,12 +2,12 @@
 
 
 /**
- * activity model
+ * view model
  */
-class Activity
+class View
 {
     /**
-     * manages crud for activity
+     * manages crud for view
      */
 
     // iniatiliaze db
@@ -19,7 +19,7 @@ class Activity
         // connect to db 
         $this->db = new MainModel();
         // associate model with $table 
-        $this->table = 'activitys';
+        $this->table = 'views';
     }
 
 
@@ -48,9 +48,9 @@ class Activity
         return $this->db->get($this->table, $id);
     }
 
-    public function get_for_user($id)
+    public function get_for_post($id)
     {
-        $sql = "SELECT * FROM $this->table WHERE activity_user_id = '$id'";
+        $sql = "SELECT * FROM $this->table WHERE view_user_id = '$id'";
         return $this->db->getManySql($sql);
     }
 

@@ -37,7 +37,7 @@ include_once include_path('topnav-admin.php');
 				<table class="table table-sm table-bordered dt">
 					<thead>
 						<tr>
-							<th width="50%">
+							<th width="40%">
 								Blog Title
 							</th>
 							<th width="10%" class="text-center">
@@ -48,6 +48,9 @@ include_once include_path('topnav-admin.php');
 							</th>
 							<th width="10%"  class="text-center">
 							 	Publish
+							</th>
+							<th width="10%"  class="text-center">
+							 	Views
 							</th>
 							<th class="text-center">
 								Actions
@@ -66,12 +69,15 @@ include_once include_path('topnav-admin.php');
 								<td class="">
 									<?= $v->category_name; ?>
 								</td>
-								<td class="text-center"">
+								<td class="text-center">
 									<?php if ($v->post_published): ?>
 										<a href="<?php url_to('posts/publish/'.$v->id) ?>">Unpublish</a>
 									<?php else: ?>
 										<a href="<?php url_to('posts/publish/'.$v->id) ?>">Publish</a>
 									<?php endif ?>
+								</td>
+								<td class="text-center">
+									<?= $v->views_count ?>
 								</td>
 								<td class="text-center">
 									<a href="<?php url_to('posts/edit/'.$v->id) ?>">
