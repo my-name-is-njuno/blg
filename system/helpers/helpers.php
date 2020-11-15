@@ -86,7 +86,7 @@ function get_img($path) {
 
 
 function get_img_path() {
-    return  URL_ROOT . "app/tools/assets/images/";
+    return  "app/tools/assets/images/";
 }
 
 
