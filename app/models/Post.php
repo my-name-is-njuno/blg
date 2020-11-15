@@ -160,7 +160,8 @@ class Post
                 INNER JOIN views
                 ON $this->table.id = views.view_post_id
                 INNER JOIN users 
-                ON users.id = $this->table.post_user_id";
+                ON users.id = $this->table.post_user_id
+                GROUP BY (views.view_post_id)";
         return $this->db->getManySql($sql);
     }
 
