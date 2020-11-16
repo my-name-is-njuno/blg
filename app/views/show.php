@@ -52,7 +52,7 @@
 			    </div>
 				    
 			    <nav class="blog-nav nav nav-justified my-5">
-				  <a class="nav-link-prev nav-item nav-link rounded-left" href="index.html">Go Back Home <i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+				  <a class="nav-link-prev nav-item nav-link rounded-left" href="<?php url_to('') ?>">Go Back Home <i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
 				  
 				</nav>
 				
