@@ -18,6 +18,17 @@
            <link id="theme-style" rel="stylesheet" href="<?php url_to('app/tools/assets/css/theme-1.css') ?>">
            <link id="theme-style" rel="stylesheet" href="<?php url_to('app/tools/assets/css/custom.css') ?>">
 
+
+           <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XPJ9YFJFD"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-5XPJ9YFJFD');
+            </script>
+
        </head>
 
        <body>

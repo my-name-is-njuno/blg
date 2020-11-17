@@ -21,6 +21,18 @@
 
 
            <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5fb346728fbbd6001256e60f&product=inline-share-buttons" async="async"></script>
+
+
+
+           <!-- Global site tag (gtag.js) - Google Analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=G-5XPJ9YFJFD"></script>
+			<script>
+			  window.dataLayer = window.dataLayer || [];
+			  function gtag(){dataLayer.push(arguments);}
+			  gtag('js', new Date());
+
+			  gtag('config', 'G-5XPJ9YFJFD');
+			</script>
        </head>
 
        <body>
