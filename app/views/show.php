@@ -19,6 +19,8 @@
            <link id="theme-style" rel="stylesheet" href="<?php url_to('app/tools/assets/css/theme-1.css') ?>">
            <link id="theme-style" rel="stylesheet" href="<?php url_to('app/tools/assets/css/custom.css') ?>">
 
+
+           <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5fb346728fbbd6001256e60f&product=inline-share-buttons" async="async"></script>
        </head>
 
        <body>
@@ -50,7 +52,7 @@
 
 				   
 			    </div>
-				    
+				 <div class="sharethis-inline-share-buttons"></div>
 			    <nav class="blog-nav nav nav-justified my-5">
 				  <a class="nav-link-prev nav-item nav-link rounded-left" href="<?php url_to('') ?>">Go Back Home <i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
 				  
