@@ -389,7 +389,7 @@ class Posts extends MainController
             $content = $_POST['post_content'];
             if(!empty($content)) {
                 $data['post_content'] = $content;
-                $data_to_update['post_content'] = proper_case($content);
+                $data_to_update['post_content'] = $content;
             } else {
                 $data['post_content_err'] = "content of the post is required";
                 $error = true;
